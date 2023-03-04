@@ -61,6 +61,7 @@ func (s *APIServer) configureStore() error {
 	}
 
 	s.store = st
+	
 	return nil
 }
 
