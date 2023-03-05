@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/joinusordie/http-restapi/internal/app/store/sqlstore"
+	_ "github.com/lib/pq"
 )
 
 func Start(config *Config) error {
@@ -22,7 +23,7 @@ func Start(config *Config) error {
 }
 
 func newDB(databaseURL string) (*sql.DB, error) {
-	db, err := sql.Open("Postgres", databaseURL)
+	db, err := sql.Open("postgres", databaseURL)
 	if err != nil {
 		return nil, err
 	}

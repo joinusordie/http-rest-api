@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"strings"
 	"testing"
+
+	_ "github.com/lib/pq"
 )
 
 func TestDB(t *testing.T, databaseURL string) (*sql.DB, func(...string)) {
