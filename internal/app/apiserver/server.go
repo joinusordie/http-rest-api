@@ -107,6 +107,7 @@ func (s *server) authenticateUser(next http.Handler) http.Handler {
 		id, ok := session.Values["user_id"]
 		if !ok {
 			s.error(w, r, http.StatusUnauthorized, errNotAuthenticated)
+			return
 		}
 
 		u, err := s.store.User().Find(id.(int))
